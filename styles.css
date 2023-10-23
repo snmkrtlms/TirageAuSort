@@ -1,0 +1,352 @@
+:root {
+    --redLight: rgb(228, 0, 0);
+    --greenLight: rgb(0, 155, 0);
+    --darkslategrayLight: rgb(69, 116, 116);
+}
+
+body {
+    margin: 0px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.321), rgba(0, 0, 0, 0.56)), url("images/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    padding: 10px 0px;
+}
+
+#before-start-container {
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.609);
+    width: 100vw;
+    padding: 40px 0px;
+}
+
+#before-start-container > h1 {
+    font-size: 50px;
+}
+
+#start-button {
+    font-size: 30px;
+    padding: 10px;
+}
+
+#message-winner > h1 {
+    color: white;
+    min-width: 100%;
+    text-align: left;
+}
+
+#message-warning {
+    color: white;
+    background-color: var(--redLight);
+    padding: 5px 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h4 {
+    font-weight: bold;
+    text-align: center;
+}
+
+/*Conteneur de cartes*/
+#container-of-cards {
+    background-color: rgb(0, 0, 0, 0.6);
+    padding: 40px 0px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: 100px;
+    width: 100vw;
+}
+
+#title-mode {
+    width: 100%;
+}
+
+article {
+    position: relative;
+}
+
+.card > .content > button {
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 20%;
+    margin: 10px;
+    border-radius: 3px;
+    transition: 0.3s;
+
+}
+
+.content {
+    padding: 2px 16px;
+}
+
+/*Couleur lorsqu'un utisateur est choisi au hasard*/
+.catch-player {
+    color: white;
+    background-color: darkslategray;
+    box-shadow: 0px 0px 10px darkslategray;
+    transition: 0.3s;
+}
+
+/*Boutons*/
+#btns-for-games {
+    text-align: center;
+    margin: 10px 0px;
+}
+
+#btns-for-games > button {
+    font-size: 25px;
+    padding: 10px;
+    margin-top: 10px;
+    min-width: 100px;
+    margin: 0px 5px;
+}
+
+.btn{
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-red{
+    background-color: var(--redLight);
+}
+
+.btn-red:hover{
+    cursor: pointer;
+    background-color: red;
+    box-shadow: 0px 0px 5px red;
+    transition: 0.3s;
+}
+
+.btn-green{
+    background-color: green;
+}
+
+.btn-green:hover {
+    cursor: pointer;
+    background-color: var(--greenLight);
+    box-shadow: 0px 0px 5px var(--greenLight);
+    transition: 0.3s;
+}
+
+.btn-darkslategray {
+    background-color: darkslategray;
+}
+
+.btn-darkslategray:hover{
+    cursor: pointer;
+    background-color: var(--darkslategrayLight);
+    box-shadow: 0px 0px 5px var(--darkslategrayLight);
+    transition: 0.3s;
+}
+
+#add-person {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#btns-for-games > button:disabled {
+    border-radius: 5px;
+    border: none;
+    cursor:auto;
+    box-shadow: none;
+}
+
+/*animation*/
+.right-to-left {
+    position: relative;
+    top: 10%;
+    animation: run infinite;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+}
+
+/*Animation pour le message de Felicitation*/
+@keyframes run {
+    0% {left: 101vw;}
+    100% {left: -50vw;}
+  }
+
+
+/*Choix de mode */
+#game-mode{
+    color: white;
+    margin: 10px 0px;
+}
+
+#game-mode > button{
+    font-size: 20px;
+    min-width: 150px;
+    padding: 5px;
+}
+
+#game-mode > button:disabled {
+    border: none;
+    cursor:auto;
+    box-shadow: none;
+}
+
+#btn-election{
+    border-top-right-radius: 0px; 
+    border-bottom-right-radius: 0px;
+}
+
+.mode-selected{
+    background-color: var(--darkslategrayLight);
+    box-shadow: 0px 0px 15px var(--darkslategrayLight);
+    transition: 0.3s;
+}
+
+/* V2 Classement */
+#btn-ranking {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+#btn-ranking:disabled {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    text-shadow: none;
+}
+#btn-election {
+    border-right: white 2px solid;
+
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 5px;
+    text-shadow: none;
+}
+
+#btn-election:disabled {
+    border-right: rgb(89, 89, 89) 2px solid !important;
+
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 5px;
+    text-shadow: none;
+}
+
+#btn-questions {
+    border-left: rgb(201, 201, 201) 2px solid;
+
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 5px;
+}
+
+#btn-questions:disabled {
+    border-left: rgb(89, 89, 89) 2px solid !important;
+
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 5px;
+    text-shadow: none;
+}
+
+.position {
+    height: 60px;
+}
+
+.position-under-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+/*V3*/
+
+.btn-response-question {
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-response-question:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 5px darkslategray;
+    transition: 0.3s;
+
+}
+
+#question {
+    color: white;
+    border: 3px;
+    min-height: 130px;
+    background-color: darkslategray;
+    margin-bottom: 20px;
+}
+
+.question-game-over {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*
+Pour le coté responsive:
+De 480 à 720 px pour les téléphones mobiles.
+De 768 à 900 px pour les tablettes en mode portrait.
+De 900 à 1024 px pour les tablettes en mode paysage.
+De 1024 à 1200 px pour un ordinateur fixe ou portable.
+*/
+
+
+@media only screen and (max-width: 767px) {
+    #game-mode > button {
+        font-size: 13px;
+        min-width: 100px;
+        padding: 5px;
+    }
+
+    #message-warning {
+        padding: 5px 0px;
+        font-size: 10px;
+    }
+
+    #btns-for-games > button {
+        font-size: 13px;
+        min-width: 50px;
+    }
+
+    #title-mode {
+        font-size: 10px;
+    }
+
+    #question > h1 {
+        font-size: 15px;
+    }
+
+    #question > button {
+        font-size: 13px;
+        padding: 5px 0px !important;
+    }
+
+    .card {
+        width: 50%;
+    }
+
+    .card h4 {
+        font-size: 13px;
+    }
+
+    .card button {
+        font-size: 10px !important;
+    }
+  }

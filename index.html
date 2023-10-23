@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Tirage au sort</title>
+</head>
+<body>
+    <!--
+        ----- Acceuil qui permet d'aller à la zone de jeux -----
+        <div id="before-start-container">
+            <h1>Tirage au sort</h1>
+            <button id="start-button" class="btn btn-red">
+                Commencer
+            </button>
+        </div>
+
+        ----- Zone de jeux -----
+        <div id="main-game-ctn">
+            ----- Election -----
+            <div id="message-winner">
+                <h1 class="right-to-left">Félicitation NomJoueur, tu es l'élu!!</h1>
+            </div>
+            ----- Election -----
+            <div id="game-mode">
+                <h2>
+                    Modes de jeu  
+                </h2>
+                <button id="btn-election" class="btn btn-darkslategray mode-selected">
+                    Election
+                </button>
+                <button id="btn-ranking" class="btn btn-darkslategray">
+                    Classement
+                </button>
+                <button id="btn-questions" class="btn btn-darkslategray">
+                    Questions
+                </button>
+            </div>
+            ----- Election -----
+            <div id="container-of-cards">
+                <div id="title-mode">
+                <h1>Qui sera l'Elu?</h1>
+                </div>
+                <article class="card" id="NomJoueur">
+                    <div class="content">
+                        <h4>NomJoueur</h4>
+                        <button class="btn btn-red">-</button>
+                    </div>
+                </article>
+            </div>
+
+            ----- Classement -----
+            <div id="container-of-cards">
+                <div id="title-mode">
+                    <h1>Qui sera sur le podium?</h1>
+                </div>
+                <article class="card" id="jean">
+                    <div class="position">
+                        <img height="60" src="./images/Trophy_silver.png" style="padding-top: 10px;">
+                    </div><div class="content">
+                        <h4>jean</h4>
+                        <button class="" disabled="">-</button>
+                    </div>
+                </article>
+                <article class="card" id="michel">
+                    <div class="position">
+                        <img height="60" src="./images/Trophy_bronze.png" style="padding-top: 10px;">
+                    </div>
+                    <div class="content"><h4>michel</h4><button class="" disabled="">-</button>
+                    </div>
+                </article>
+                <article class="card" id="frederic">
+                    <div class="position">
+                        <img height="60" src="./images/Trophy_gold.png" style="padding-top: 10px;">
+                    </div>
+                    <div class="content">
+                        <h4>frederic</h4>
+                        <button class="" disabled="">-</button>
+                    </div>
+                </article>
+                <article class="card" id="marc" style="background-color: rgb(88, 88, 88);">
+                    <div class="position position-under-top">
+                        <span>4ème</span>
+                    </div>
+                    <div class="content">
+                        <h4>marc</h4>
+                        <button class="" disabled="">-</button>
+                    </div>
+                </article>
+            </div>
+
+            ----- Questions -----
+            <div id="container-of-cards">
+                <div id="title-mode">
+                    ----- Titre du mode -----
+                    <h1>Qui sera le dernier en vie?</h1>
+                    ----- Question posé -----
+                    <div id="question" style="min-height: 130px; background-color: darkslategray; margin-bottom: 20px;">
+                        <h1 style="margin: 0px;">Le palmier est un arbre?</h1>
+                        <button id="true-response" class="card btn-response-question" style="padding: 10px 0px;">
+                            Vrai
+                        </button>
+                        <button class="card btn-response-question" id="false-response" style="padding: 10px 0px;">
+                            Faux
+                        </button>
+                    </div>
+                    ----- Fin de jeux -----
+                    <div id="question" style="min-height: 130px; background-color: darkslategray; margin-bottom: 20px;" class="question-game-over">
+                        <h1>Tout le monde est éliminé et plus aucune question... Ca tombe bien!
+                        </h1>
+                    </div>
+                </div>
+                <article class="card" id="jean"><div class="content">
+                    <h4>jean</h4>
+                    <button class="" disabled="">-</button>
+                </article>
+                <article class="card catch-player" id="michel">
+                    <div class="content">
+                        <h4>michel</h4>
+                        <button class="" disabled="">-</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div id="message-warning">
+            <span>Veuillez insérer au moins 2 joueurs pour débuter la partie.</span>
+        </div>
+        <div id="btns-for-games">
+            <button id="add-person" class="btn btn-green">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+            <button id="play" disabled="">
+                <i class="fa-solid fa-play"></i>
+            </button><button id="retry" class="" style="display: none;">
+                <i class="fa-solid fa-arrow-rotate-left"></i>
+            </button>
+            <button id="retry" class="btn-green">
+                <i class="fa-solid fa-arrow-rotate-left"></i>
+            </button>
+            <button id="stop" class="btn-green" style="display: none;">
+                <i class="fa-solid fa-stop"></i>
+            </button>
+        </div>
+    </div>
+
+
+        <div id="mainGameCtn">
+            <div id="winnerMessage">
+                <h1 class="RightToLeft">Félicitation *****, tu es l'élu!!</h1>
+            </div>
+            <div id="gameMode">
+                <h2>Mode de jeu</h2>
+                <button id="btnElection" class="btn btn-red mode-selected">Election</button>
+            </div>
+            <div id="containerOfCards">
+                ----- Election -----
+                <div id="titleMode">
+                    <h1>Qui sera l'Elu?</h1>
+                </div>
+                <div id="messageWarning">Veuillez insérer 2 joueurs pour débuter la partie.</div>
+                <div id="btnsForGames">
+                    <button id="addPerson" class="btn btn-green">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <button id="play" disabled="">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                    <button id="retry" class="btn-green">
+                        <i class="fa-solid fa-arrow-rotate-left"></i>
+                    </button>
+                    <button id="stop" class="">
+                        <i class="fa-solid fa-stop"></i>
+                    </button>
+
+                ----- Classement -----
+                <div id="containerOfCards">
+                    <div id="titleMode">
+                        <h1>Qui sera sur le podium?</h1>
+                    </div>
+                    <article class="card" id="Michel">
+                        <div class="position">
+                            <img height="60" src="./images/Trophy_bronze.png" style="padding-top: 10px;">
+                        </div>
+                        <div class="content">
+                            <h4>Michel</h4>
+                            <button class="" disabled="">-</button>
+                        </div>
+                    </article>
+                    <article class="card" id="Jean" style="background-color: rgb(88, 88, 88);">
+                        <div class="position positionUnderTop">
+                            <span>4ème</span>
+                        </div>
+                        <div class="content">
+                            <h4>Jean</h4>
+                            <button class="" disabled="">-</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    -->
+
+    
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
